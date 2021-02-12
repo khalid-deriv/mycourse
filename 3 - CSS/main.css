@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(20, 20, 20, 0.85);
+}
+
+.menu-bar > .branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 12px;
+    color: white;
+    font-size: 30px;
+}
+
+.menu-bar > .branding > img {
+    margin-right: 8px;
+}
+
+.menu-bar > .item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: fit-content;
+    padding: 12px;
+    margin-right: 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: rgba(20, 20, 20, 0.5);
+    font-size: 16px;
+}
+
+.menu-bar > .item:hover {
+    box-shadow:
+        0 0 8px rgb(255, 253, 112),
+        0 0 8px rgba(0,0,0,0.2);
+}
+
+.item > img {
+    margin-left: 8px;
+}
+
+.content {
+    padding: 60px 24px;
+}
+
+.drum {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.drum-card {
+    box-shadow: 0 4px 8px 0 rgba(14, 14, 14, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 36px;
+    border-radius: 0 0 10px 10px;
+    
+}
+
+.card-header {
+    font-size: 48px;
+    color: white;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+    padding: 12px 0;
+    text-transform: uppercase;
+}
+
+.game-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 180px;
+}
