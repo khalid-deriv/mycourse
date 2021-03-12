@@ -1,89 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An interactive drum app. Have fun in free mode or challenge yourself in game mode!">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive drum app. Have fun in free mode or challenge yourself in game mode!"
+    />
     <title>Drum App | BeSquare</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" type="image/svg" href="img/drum.svg"/>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" type="image/svg" href="img/drum.svg" />
+  </head>
+  <body>
     <nav class="menu-bar">
-        <div class="branding">
-            <img src="img/drum.svg" alt="drum" width="38" height="38"> Drum App
-        </div>
-        <button class="item">
-            Start Game <img src="img/start.svg" alt="play" width="24" height="24">
-        </button>
-        <button class="item">
-            Record <img src="img/record.svg" alt="record" width="36" height="36">
-        </button>
-        <button class="item">
-            Playback <img src="img/play.svg" alt="play" width="24" height="24">
-        </button>
+      <div class="branding">
+        <img src="img/drum.svg" alt="drum" width="38" height="38" /> Drum App
+      </div>
+      <button id="start_game" class="item">
+        Start Game <img src="img/start.svg" alt="play" width="24" height="24" />
+      </button>
+      <button id="record" class="item">
+        Record <img src="img/record.svg" alt="record" width="36" height="36" />
+      </button>
+      <button id="playback" class="item">
+        Playback <img src="img/play.svg" alt="play" width="24" height="24" />
+      </button>
     </nav>
     <div class="content flex-column-center">
-        <div class="message-box flex-column-center">
-            <div class="header flex-row-center">
-                <label class="mini-display"><span>Timer</span>
-                    <input type="text" disabled />
-                </label>
-                <label class="mini-display"><span>Score</span>
-                    <input type="text" disabled />
-                </label>
-            </div>
-            <div class="message flex-row-center">
-                <div id="key-display">
-                    K
-                </div>
-            </div>
+      <div class="message-box flex-column-center">
+        <div class="header flex-row-center">
+          <label class="mini-display"
+            ><span>Timer</span>
+            <input type="text" disabled />
+          </label>
+          <label class="mini-display"
+            ><span>Score</span>
+            <input id="score" type="text" disabled />
+          </label>
         </div>
-        <div class="drum">
-            <div class="drum-card" id="clap">
-                <div class="card-header">A</div>
-                <div class="card-content">Clap</div>
-            </div>
-            <div class="drum-card" id="hi_hat">
-                <div class="card-header">S</div>
-                <div class="card-content">Hi Hat</div>
-            </div>
-            <div class="drum-card" id="kick">
-                <div class="card-header">D</div>
-                <div class="card-content">Kick</div>
-            </div>
-            <div class="drum-card" id="open_hat">
-                <div class="card-header">F</div>
-                <div class="card-content">Open Hat</div>
-            </div>
-            <div class="drum-card" id="boom">
-                <div class="card-header">G</div>
-                <div class="card-content">Boom</div>
-            </div>
-            <div class="drum-card" id="ride">
-                <div class="card-header">H</div>
-                <div class="card-content">Ride</div>
-            </div>
-            <div class="drum-card" id="snare">
-                <div class="card-header">J</div>
-                <div class="card-content">Snare</div>
-            </div>
-            <div class="drum-card" id="tom">
-                <div class="card-header">K</div>
-                <div class="card-content">Tom</div>
-            </div>
-            <div class="drum-card" id="tink">
-                <div class="card-header">L</div>
-                <div class="card-content">Tink</div>
-            </div>
+        <div class="message flex-row-center">
+          <div id="key-display">K</div>
         </div>
-        <div id="history">
-            
+      </div>
+      <div class="drum">
+        <div class="drum-card" id="clap">
+          <div class="card-header">A</div>
+          <div class="card-content">Clap</div>
         </div>
+        <div class="drum-card" id="hi_hat">
+          <div class="card-header">S</div>
+          <div class="card-content">Hi Hat</div>
+        </div>
+        <div class="drum-card" id="kick">
+          <div class="card-header">D</div>
+          <div class="card-content">Kick</div>
+        </div>
+        <div class="drum-card" id="open_hat">
+          <div class="card-header">F</div>
+          <div class="card-content">Open Hat</div>
+        </div>
+        <div class="drum-card" id="boom">
+          <div class="card-header">G</div>
+          <div class="card-content">Boom</div>
+        </div>
+        <div class="drum-card" id="ride">
+          <div class="card-header">H</div>
+          <div class="card-content">Ride</div>
+        </div>
+        <div class="drum-card" id="snare">
+          <div class="card-header">J</div>
+          <div class="card-content">Snare</div>
+        </div>
+        <div class="drum-card" id="tom">
+          <div class="card-header">K</div>
+          <div class="card-content">Tom</div>
+        </div>
+        <div class="drum-card" id="tink">
+          <div class="card-header">L</div>
+          <div class="card-content">Tink</div>
+        </div>
+      </div>
+      <div id="history"></div>
     </div>
     <script type="module" src="js/main.js"></script>
-</body>
+  </body>
 </html>
