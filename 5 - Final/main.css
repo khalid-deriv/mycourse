@@ -103,7 +103,7 @@ nav > .menu {
   border-radius: 0.4rem;
   margin-top: 4rem;
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
