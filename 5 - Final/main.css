@@ -1,0 +1,190 @@
+/* Navigation Bar */
+nav {
+  position: fixed;
+  display: inline-flex;
+  width: calc(100% - 32px);
+  height: 60px;
+  padding: 0 16px;
+  background-color: black;
+  color: white;
+  align-items: center;
+  top: 0;
+}
+
+nav > .app-logo {
+  font-size: 32px;
+}
+
+nav > .menu {
+  margin-left: auto;
+}
+
+/* Menu Button */
+.menu > button {
+  background-color: rgb(1, 107, 93);
+  border-style: none;
+  padding: 6px 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+}
+
+.menu > button:hover {
+  background-color: rgb(1, 151, 131);
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 60px;
+  background-color: rgb(249, 250, 251);
+}
+
+/* Top Content Bar */
+.top-content-bar {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* Score Box */
+.score-box {
+  background-color: black;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 100px;
+  padding-left: 40px;
+  border-radius: 0.6rem;
+  font-size: 40px;
+  box-shadow: 0 2px 10px 1px #cccccc;
+}
+
+.score-box > #score {
+  background-color: #bb346c;
+  width: 50%;
+  height: 100%;
+  border-radius: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  margin-left: auto;
+}
+
+/* Timer Box */
+.timer-box {
+  width: 320px;
+  height: 100px;
+  background-color: white;
+  border-radius: 0.6rem;
+  margin-left: 40px;
+  box-shadow: 0 2px 10px 1px #cccccc;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+}
+
+/* Target Box */
+.target-box {
+  width: 90%;
+  height: 14rem;
+  background-color: white;
+  box-shadow: 0 1px 20px 1px #cccccc;
+  border-radius: 0.4rem;
+  margin-top: 4rem;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.target-box > .target-card {
+  width: 8rem;
+  height: 10rem;
+  border-radius: 0.4rem;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: white;
+  box-shadow: 0 1px 20px 1px #cccccc;
+  margin-right: 2rem;
+  opacity: 0.5;
+}
+
+.target-box > .target-card:first-child {
+  margin-left: 2rem;
+}
+
+.target-card.active {
+  width: 10rem;
+  height: 12rem;
+  color: black;
+  box-shadow: 0 1px 20px 1px #000000;
+  opacity: 1;
+}
+
+.target-card.correct {
+  box-shadow: 0 1px 10px 1px #169716;
+}
+
+.target-card.wrong {
+  box-shadow: 0 1px 10px 1px #ff5959;
+}
+
+.target-card.timeout {
+  box-shadow: 0 1px 10px 1px #ffae00;
+}
+
+/* Key Box */
+.key-box {
+  display: grid;
+  width: 90%;
+  height: 10rem;
+  grid-template-columns: repeat(9, 1fr);
+  justify-items: stretch;
+  margin-top: 4rem;
+}
+
+.key-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+  height: 100%;
+  font-size: 28px;
+  box-shadow: 0 1px 20px 1px #cccccc;
+  border-radius: 20px;
+}
+
+.key-card > .header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.key-card > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: white;
+}
