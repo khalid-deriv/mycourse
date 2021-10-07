@@ -1,3 +1,24 @@
+let game_timer;
+let current_key_position = 0;
+let score = 0;
+let is_game_started = false;
+
+const history = [];
+const sample_game_mode = [
+  "g",
+  "a",
+  "g",
+  "g",
+  "a",
+  "g",
+  "g",
+  "a",
+  "g",
+  "g",
+  "a",
+  "g",
+];
+
 const key_drum_pair = {
   a: "clap",
   s: "hi_hat",
@@ -9,6 +30,42 @@ const key_drum_pair = {
   k: "tom",
   l: "tink",
 };
+
+// Element
+const timer_element = document.getElementById("timer");
+const score_element = document.getElementById("score");
+
+// Default data
+const key_status_pair = [
+  { id: "", status: "" },
+  { id: "", status: "" },
+  { id: "", status: "" },
+  { id: "", status: "" },
+  { id: "", status: "" },
+  { id: "", status: "" },
+  { id: "", status: "" },
+];
+
+const start_game_btn = document.getElementById("start_game");
+start_game_btn.addEventListener("click", () => {
+  is_game_started = !is_game_started;
+  if (is_game_started) {
+    startGame();
+  } else {
+    endGame();
+  }
+});
+
+function startGame() {
+  startTimer(120);
+  start_game_btn.textContent = "End Game";
+}
+
+function endGame() {
+  clearInterval(game_timer);
+  start_game_btn.textContent = "Start Game";
+  timer_element.textContent = "00:00";
+}
 
 Object.keys(key_drum_pair).forEach((key) => {
   const drum_type = key_drum_pair[key];
@@ -25,6 +82,16 @@ function processKeyPress(key) {
   if (drum_type) {
     playSound(drum_type);
   }
+  if (is_game_started) {
+    if (key === sample_game_mode[current_key_position]) {
+      score++;
+    }
+    current_key_position++;
+
+    if (sample_game_mode.length === current_key_position + 1) {
+      endGame();
+    }
+  }
 }
 
 function playSound(drum_type) {
@@ -32,28 +99,14 @@ function playSound(drum_type) {
   audio.play();
 }
 
-// Holds the log of the recent 7 played keys
-const key_status_pair = [
-  { id: "", status: "" },
-  { id: "", status: "" },
-  { id: "", status: "" },
-  { id: "a", status: "" },
-  { id: "", status: "" },
-  { id: "", status: "" },
-  { id: "", status: "" },
-];
-
-const sample_game_mode = ["g", "a", "g", "g", "a", "g", "g", "a", "g", "g"];
-
 // Sets Timer. Duration is in seconds.
 function startTimer(duration) {
-  const timer_element = document.getElementById("timer");
   let current_time = 0;
-  const interval_id = setInterval(() => {
+  game_timer = setInterval(() => {
     current_time++;
     timer_element.textContent = formatTime(current_time);
     if (current_time >= duration) {
-      clearInterval(interval_id);
+      clearInterval(game_timer);
     }
   }, 1000);
 }
@@ -64,8 +117,6 @@ function formatTime(time) {
   seconds = ("0" + Math.floor(time % 60)).substr(-2);
   return `${minutes}:${seconds}`;
 }
-
-startTimer(120);
 
 // Updates target display
 function updateTargets(target_array) {
